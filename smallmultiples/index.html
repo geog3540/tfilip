@@ -127,7 +127,7 @@
 	var legendX = 0.84, legendY = 0.5
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'GEOID', nameAttribute = 'County';
+	var idAttribute = 'GEOID', nameAttribute = 'la_ca_env2_County';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.YlGn;
@@ -139,10 +139,10 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'Lead_P', att1alias = 'Percentage of Lead', att1format = '.0f',
-	att2 = 'AsthmaP', att2alias =  '% Asthma', att2format = '.0f',
-	att3 = 'LowBirWP', att3alias = 'Low Birth Weight', att3format = '.0f',
-	att4 = 'PovertyP', att4alias = 'Poverty', att4format = '.0f';
+	var att1 = 'la_ca_env2_Lead_P', att1alias = 'Percentage of Lead', att1format = '.0f',
+	att2 = 'la_ca_env2_AsthmaP', att2alias =  '% Asthma', att2format = '.0f',
+	att3 = 'la_ca_env2_LowBirWP', att3alias = 'Low Birth Weight', att3format = '.0f',
+	att4 = 'la_ca_env2_PovertyP', att4alias = 'Poverty', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
