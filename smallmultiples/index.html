@@ -116,15 +116,15 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/la_census_map2.json'
+	var polygonJSONFile = 'data/la_census_map3.json'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers();
-	var widthheightRatio =2;
+	var widthheightRatio =.8;
 	// Relative placement of legend that ranges between 0 and 1.
 	// 0 is the start, whereas 1 i the end of each panel.
 	// If you want to put the legend on the left, then use 0.
 	// legendY = 0.5 puts the legend in the middle of the Y Axis.
-	var legendX = 0.84, legendY = 0.5
+	var legendX = 0, legendY = 0.8
 
 	// id attribute and the name attribute to be used in the tooltip
 	var idAttribute = 'GEOID', nameAttribute = 'la_ca_env3_County';
