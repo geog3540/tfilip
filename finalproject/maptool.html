@@ -61,9 +61,19 @@
           <img class="card-img-top" src="" alt="" class="center">
         </div>
         <p class="card-text">
-          <b> Heatmap of Greenspace Density </b> <br> First examine the density of different greenspace polygons
-          using an interactive heatmap to visualize the different areas where these polygons are located on a map.
+          <b> Heatmap of Greenspace Density </b> <br> After retrieving the polygons of the different greenspaces,
+          first examine the density of different greenspace polygons using an interactive heatmap
+          to visualize the different areas where these polygons are located on a map. Darker red areas indicate
+          more greenspace polygons (i.e., more greespaces within that vicinity).
             <iframe src="Number_heatmap.html" height="600" width="800"></iframe>
+          <b> Format the Data </b> <br>
+          Format the dataset by finding the centroid of each polygon, and then placing those centroids (in red points)
+          onto the census tract polygon for Johnson County.This is how we will examine the number of polygons within
+          each census tract, and how this will be placed onto an interactive choropleth.
+          <div class="picture-container">
+            <img src="images/centroids.png">
+            <img src="images/centroid_on_census.png">
+          </div>
 
         </p>
       </div>
