@@ -62,18 +62,7 @@
         </div>
         <p class="card-text"> <b> Heatmap of Density of Greenspaces in Johnson County </b> <br>
           <div w3-include-html="Number_heatmap.html"></div>
-          <br> <b> How Is Greenspace Operationalized? </b> <br> Greenspace exposure is commonly calculated using the NDVI tool to examine sattelite imagery of tree canopy cover over a region (Labib et al., 2020).
-            However, there is a lack of consensus as to the resolution appropriate for mapping NDVI index and the time of year in which the satellite image was obtained (Zhang et al., 2020). Here, we utilized Open Street Maps to examine the
-            location of greenspaces (e.g., parks and recreation areas) within Johnson County by querying the publicly available dataset. The OSM tags we used included:
-            <ul><br>
-              <li> Leisure: Park, Garden, Nature Reserve </li>
-              <li> Boundary: Forest, National Park </li>
-              <li> Landuse: Forest, Recreation Ground </li>
-              <li> Natural: Wood </li>
-            </ul> <br>
-              <b> Who Can Use This Tool? </b> <br> This tool was created for researchers to apply the code in their region of interest to examine greenspace density.
-              OSM was used to make the dataset publicly available and open for all for research or exploration. The link to the code can be found on Github
-              or by clicking on the link to the code. Please keep in mind that the code will need to be edited to best suit your purposes.
+
         </p>
       </div>
       <!-- /.row -->
@@ -95,4 +84,43 @@
 
   </body>
 
+<!-- IDK -->
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script>
+<body>
+
+<div w3-include-html="Number_heatmap.html"></div> 
+
+<script>
+includeHTML();
+</script>
+
+</body>
 </html>
