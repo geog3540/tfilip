@@ -87,10 +87,12 @@
           </div>
           <br><b>Examine Choropleth with Number of Greenspaces</b> Here we can visualize the number of
           greenspaces per census tract. Hover over the map to see the number of greenspaces per each census tract number.
-          <br><br>
-          <iframe src="Number_choro.html" height="600" width="800"></iframe>
-          <br><br>
-          <br><b> Greenspace Density by Area </b> There is a problem in normalization of greenspace by using only the counts as done above.
+          <div style="display: flex; flex-direction: column;">
+            <iframe src="Number_choro.html" height="600" width="800"></iframe>
+            <b> Greenspace Density by Area </b>
+          </div>
+
+          There is a problem in normalization of greenspace by using only the counts as done above.
           By using the count of the centroids of each polygon, we are unable to examine the area that each greenspace covers.
           To account for this, we calculated the area:
           <ul>
@@ -102,6 +104,7 @@
           This results in a percentage of greenspace area by total area for each census tract. This was displayed on a choropleth below.
           Hover over the choropleth to examine the %s by census tract.<br>
 
+          <!-- separate the text beneath the html so it doest overlap-->
           <div style="display: flex; flex-direction: column;">
             <iframe src="Area_choro.html" height="600" width="800"></iframe>
             <b>Examine the 2 Choropleths Side by Side</b><br>
