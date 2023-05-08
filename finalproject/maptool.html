@@ -130,8 +130,17 @@
           function to create one large polygon for all the greenspace polygons that connect. This map displays the product of that process:
           <div style="display: flex; flex-direction: column;">
             <iframe src="dissovledgreenspace.html" height="600" width="800"></iframe>
-            <br>
+            <b>Plotting Data onto Greenspace Distance Map</b><br>
           </div>
+          <br>Now we can plot some (fake) location data onto our greenspace map with the 300m buffer. This is commonly reported in the literature
+          as a way of examining where home locations are in proximity to greenspace. Further analyses can utilize network distance to
+          the edge of each greenspace polygon or Euclidean distance. Distance can be returned to the location dataframe and exported
+          for the researcher to examine distance to greenspace for each participant. Here is an example of what this might look like
+          when plotted onto a map:
+          <div style="display: flex; flex-direction: column;">
+            <iframe src="homes_on_greenspace.html" height="600" width="800"></iframe>
+          </div>
+
 
         </p>
       </div>
