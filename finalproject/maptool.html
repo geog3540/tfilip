@@ -123,13 +123,13 @@
                    <iframe src="Area_choro.html"></iframe>
           </div>
           <br>Now we can see that the 2 choropleths tell a different story. The one on the right indicates that
-          census tract number 010100 (top right) has less density of greenspace when examining area instead of number of polygons.
+          census tract number 010100 (top right) has less density of greenspace when examining area instead of number of polygons.<br>
           <br><b>Distance to Greenspace</b><br>Now we will examine distance to the different greenspace polygons.
           We did this by first creating a buffer of 300m around each polygon (e.g., more information regarding parameters
           can be found in the background/code). Next, we dissolved the overlap between polygons using the geopandas Shapely .dissolve()
           function to create one large polygon for all the greenspace polygons that connect. This map displays the product of that process:
           <div style="display: flex; flex-direction: column;">
-            <iframe src="dissolvedgreenspace.html" height="600" width="800"></iframe>
+            <iframe src="dissovledgreenspace.html" height="600" width="800"></iframe>
             <br>
           </div>
 
