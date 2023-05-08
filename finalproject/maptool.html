@@ -61,7 +61,20 @@
           <img class="card-img-top" src="images/greenspacepic.png" alt="" class="center"> </center>
         </div>
         <p class="card-text"> <b> Heatmap of Density of Greenspaces in Johnson County </b> <br>
-          <div w3-include-html="Number_heatmap.html"></div>
+          <html>
+  <head>
+    <script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $("#includedContent").load("Number_heatmap.html");
+    });
+    </script>
+  </head>
+
+  <body> 
+     <div id="includedContent"></div>
+  </body>
+</html>
 
         </p>
       </div>
