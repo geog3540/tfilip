@@ -16,6 +16,17 @@
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 
+  <!-- Code for the 2 pics side by side-->
+    <style>
+    .picture-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      img {
+        width: 48%;
+        height: auto;
+      }
+    </style>
   </head>
 
   <body>
@@ -66,7 +77,7 @@
           to visualize the different areas where these polygons are located on a map. Darker red areas indicate
           more greenspace polygons (i.e., more greespaces within that vicinity).
             <iframe src="Number_heatmap.html" height="600" width="800"></iframe>
-          <b> Format the Data </b> <br>
+          <br><b> Format the Data </b> <br>
           Format the dataset by finding the centroid of each polygon, and then placing those centroids (in red points)
           onto the census tract polygon for Johnson County.This is how we will examine the number of polygons within
           each census tract, and how this will be placed onto an interactive choropleth.
