@@ -81,14 +81,16 @@
           <img class="card-img-top" src="" alt="" class="center">
         </div>
         <p class="card-text">
-          <b> Heatmap of Greenspace Density </b> <br> After retrieving the polygons of the different greenspaces,
-          first examine the density of different greenspace polygons using an interactive heatmap
-          to visualize the different areas where these polygons are located on a map. Darker red areas indicate
-          more greenspace polygons (i.e., more greespaces within that vicinity).
+          <b> Heatmap of Greenspace Density </b> <br> After retrieving the polygons of the different greenspaces using the OSM API pull for the different tags,
+          first examine the density (or number) of different greenspace polygons using an interactive heatmap
+          to visualize the different areas where these polygons are located. Darker red areas indicate
+          more greenspace polygons (i.e., more greespaces within that vicinity by count). The census tract is placed as a layer
+          on the map to visualize more clearly where these areas are located. Use the map layer tool in the right-hand corner
+          to interact with this tool.
             <iframe src="Number_heatmap.html" height="600" width="800"></iframe>
           <br><b> Format the Data </b> <br>
           Format the dataset by finding the centroid of each polygon, and then placing those centroids (in red points)
-          onto the census tract polygon for Johnson County.This is how we will examine the number of polygons within
+          onto the census tract polygon for Johnson County. This is how we will examine the number of polygons within
           each census tract, and how this will be placed onto an interactive choropleth.
           <div class="picture-container">
             <img src="images/centroids.png">
@@ -111,7 +113,7 @@
           </ul>
           We then normalized the area by dividing the intersecting area of the polygons by the total area within each census tract.
           This results in a percentage of greenspace area by total area for each census tract. This was displayed on a choropleth below.
-          Hover over the choropleth to examine the %s by census tract.<br>
+          Hover over the choropleth to examine the %s of area that is greenspace by census tract.<br>
 
           <!-- separate the text beneath the html so it doest overlap-->
           <div style="display: flex; flex-direction: column;">
@@ -123,7 +125,9 @@
                    <iframe src="Area_choro.html"></iframe>
           </div>
           <br>Now we can see that the 2 choropleths tell a different story. The one on the right indicates that
-          census tract number 010100 (top right) has less density of greenspace when examining area instead of number of polygons.<br>
+          census tract number 010100 (top right) has less density of greenspace when examining area instead of number of polygons.
+          The choropleth on the right is more accurate as it standardizes the area of the greenspace. Choropleth's should
+          display normalized variables as a general guideline and we can see how plotting raw data may distort the actual spatial patterns.<br>
           <br><b>Distance to Greenspace</b><br>Now we will examine distance to the different greenspace polygons.
           We did this by first creating a buffer of 300m around each polygon (e.g., more information regarding parameters
           can be found in the background/code). Next, we dissolved the overlap between polygons using the geopandas Shapely .dissolve()
@@ -140,7 +144,17 @@
           <div style="display: flex; flex-direction: column;">
             <iframe src="homes_on_greenspace.html" height="600" width="800"></iframe>
           </div>
-
+        <br><b>Final Summary</b> This project represents a comparison of methods for visualizing greenspace within Johnson County.
+        The data was obtained from Open Street Maps using queries to pull "tags" from the openly accessible data. These data were returned
+        as polygons of various greenspaces in Johnson County.
+        First we plotted raw counts of the number of greenspace polygons by finding the centroid of each polygon and plotting that on top of
+        the census tract polygons for Johnson County. A more accurate way to examine greenspace is by finding the normalized area of greenspaces
+        in Johnson county. We did this by finding the area of each census tract, then the area of intersection of the greenspace polygons
+        within the census tract polygons. This percentage of greenspace area was returned onto the choropleth for visualization.
+        Lastly, we created a method to examine distance to greenspace, as is commonly reported in the literature. To do this,
+        we created a buffer around the polygons of 300m then plotted fake location data onto the map to visualize the process.
+        Researchers can use this tool as a base to work from when analyzing how to extract greenspace data, visualize it, and apply various
+        spatial tools to the data. 
 
         </p>
       </div>
